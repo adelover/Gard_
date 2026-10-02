@@ -24,7 +24,7 @@ nginx -t || exit 1
 keep() {
   local name=$1; shift
   while true; do
-    ( "$@" ); echo "[jinx] $name stopped (code $?), starting again in 1s"; sleep 1
+    ( "$@" ); echo "[gard config] $name stopped (code $?), starting again in 1s"; sleep 1
   done
 }
 
@@ -45,7 +45,7 @@ keep panel panel_run &
 PANEL_PID=$!
 
 # ---- auto setup + self-healing (restarts itself if it ever crashes) ----
-( cd /code && while true; do python bootstrap.py; echo "[jinx] bootstrap exited, restarting in 10s"; sleep 10; done ) &
+( cd /code && while true; do python bootstrap.py; echo "[gard config] bootstrap exited, restarting in 10s"; sleep 10; done ) &
 
 keep nginx nginx -g 'daemon off;' &
 NGINX_PID=$!
@@ -54,12 +54,12 @@ NGINX_PID=$!
 (
   sleep 120; fails=0
   while true; do
-    if bash /usr/local/bin/jinx-healthcheck; then fails=0; else fails=$((fails+1)); fi
-    if [ "$fails" -ge 6 ]; then echo "[jinx] watchdog: service not answering, restarting"; exit 1; fi
+    if bash /usr/local/bin/gard-config-healthcheck; then fails=0; else fails=$((fails+1)); fi
+    if [ "$fails" -ge 6 ]; then echo "[gard config] watchdog: service not answering, restarting"; exit 1; fi
     sleep 30
   done
 ) &
 WATCH_PID=$!
 
 wait -n $NODE_PID $PANEL_PID $NGINX_PID $WATCH_PID
-echo "[jinx] restarting container"; exit 1
+echo "[gard config] restarting container"; exit 1

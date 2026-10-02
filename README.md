@@ -1,15 +1,15 @@
 <div align="center">
 
-<img src="banner.svg" width="100%" alt="Super JinX Panel">
+<img src="banner.svg" width="100%" alt="Super gard config Panel">
 
-<a href="https://t.me/+WvKFv0lU_i5lNGE0"><img src="https://readme-typing-svg.demolab.com?font=Inter&weight=800&size=22&duration=2600&pause=700&color=6C7BFF&center=true&vCenter=true&width=620&lines=One-click+Reseller+Panel+on+Railway;PasarGuard+%2B+Xray+in+a+single+service;5+configs+%C2%B7+2+groups+%C2%B7+self-healing;Free+forever+%C2%B7+X4G+%C3%97+JinX" alt="Super JinX"></a>
+<a href="https://t.me/+WvKFv0lU_i5lNGE0"><img src="https://readme-typing-svg.demolab.com?font=Inter&weight=800&size=22&duration=2600&pause=700&color=6C7BFF&center=true&vCenter=true&width=620&lines=One-click+Reseller+Panel+on+Railway;PasarGuard+%2B+Xray+in+a+single+service;5+configs+%C2%B7+2+groups+%C2%B7+self-healing;Free+forever+%C2%B7+X4G+%C3%97+gard config" alt="Super gard config"></a>
 
-<h1>Super JinX Panel</h1>
+<h1>Super gard config Panel</h1>
 
 <p><b>پنل نمایندگی حرفه‌ای، رایگان و متن‌باز بر پایه‌ی PasarGuard</b><br>
 یک Fork تا یک سرویس کامل: پنل، هسته‌ی Xray و 5 کانفیگ آماده، همه روی Railway</p>
 
-<a href="https://t.me/+WvKFv0lU_i5lNGE0"><img src="https://img.shields.io/badge/Telegram-Super%20JinX-26A5E4?style=for-the-badge&logo=telegram&logoColor=white" alt="Telegram"></a>
+<a href="https://t.me/+WvKFv0lU_i5lNGE0"><img src="https://img.shields.io/badge/Telegram-Super%20gard config-26A5E4?style=for-the-badge&logo=telegram&logoColor=white" alt="Telegram"></a>
 <img src="https://img.shields.io/badge/Version-6.1.3-5b6cff?style=for-the-badge" alt="Version">
 <img src="https://img.shields.io/badge/Price-Free-16a34a?style=for-the-badge" alt="Free">
 <br>
@@ -38,12 +38,12 @@
 <br>
 
 > [!NOTE]
-> **Super JinX** کاملاً رایگانه. ریپو رو Fork کن، روی Railway بساز و در کمتر از 5 دقیقه پنل نمایندگی خودت رو تحویل بگیر. بدون VPS، بدون ترمینال، بدون تنظیم دستی.
+> **Super gard config** کاملاً رایگانه. ریپو رو Fork کن، روی Railway بساز و در کمتر از 5 دقیقه پنل نمایندگی خودت رو تحویل بگیر. بدون VPS، بدون ترمینال، بدون تنظیم دستی.
 
 <br>
 
 > [!IMPORTANT]
-> **تازه‌های نسخه‌ی 6.1.3:** صفحه‌ی اشتراک جدید JINX PASS دو زبانه · نگهبان ساب لینک 3 ثانیه‌ای · پینگ پایدارتر و مصرف رم کمتر · ربات پشتیبان خودکار که هر خرابی رو همونجا درست می‌کنه · تغییر رمز از داخل تنظیمات · بازیابی ورود با کلید مالک از صفحه‌ی ورود · قفل گروه‌ها و هاست‌ها در برابر حذف · کانفیگ‌های سریع‌تر · صفحه‌ی اشتراک مقاوم‌تر
+> **تازه‌های نسخه‌ی 6.1.3:** صفحه‌ی اشتراک جدید GARD CONFIG دو زبانه · نگهبان ساب لینک 3 ثانیه‌ای · پینگ پایدارتر و مصرف رم کمتر · ربات پشتیبان خودکار که هر خرابی رو همونجا درست می‌کنه · تغییر رمز از داخل تنظیمات · بازیابی ورود با کلید مالک از صفحه‌ی ورود · قفل گروه‌ها و هاست‌ها در برابر حذف · کانفیگ‌های سریع‌تر · صفحه‌ی اشتراک مقاوم‌تر
 
 <br>
 
@@ -62,9 +62,9 @@
 
 <div align="center">
 
-<img src="preview.png" width="100%" alt="Super JinX subscription page: JINX PASS">
+<img src="preview.png" width="100%" alt="Super gard config subscription page: GARD CONFIG">
 
-<sub>صفحه‌ی اشتراکی که مشتری‌هات می‌بینن: کارت هولوگرامی JINX PASS، پینگ زنده، QR داخلی و اتصال با یک لمس، به فارسی و انگلیسی</sub>
+<sub>صفحه‌ی اشتراکی که مشتری‌هات می‌بینن: کارت هولوگرامی GARD CONFIG، پینگ زنده، QR داخلی و اتصال با یک لمس، به فارسی و انگلیسی</sub>
 
 </div>
 
@@ -101,12 +101,12 @@ flowchart LR
 <a id="intro"></a>
 ## <img src="ic-intro.svg" width="30" align="center"> &nbsp;معرفی
 
-**Super JinX** یک پنل نمایندگی کامل و آماده‌ی فروشه که روی [PasarGuard](https://github.com/PasarGuard/panel) ساخته شده. پنل، هسته‌ی Xray و وب‌سرور همه داخل **یک سرویس** روی Railway اجرا میشن و همه‌ی تنظیمات **خودکار** انجام میشه: اینباندها، هاست‌ها، گروه‌ها، قالب‌های فروش، نقش نماینده و صفحه‌ی اشتراک.
+**Super gard config** یک پنل نمایندگی کامل و آماده‌ی فروشه که روی [PasarGuard](https://github.com/PasarGuard/panel) ساخته شده. پنل، هسته‌ی Xray و وب‌سرور همه داخل **یک سرویس** روی Railway اجرا میشن و همه‌ی تنظیمات **خودکار** انجام میشه: اینباندها، هاست‌ها، گروه‌ها، قالب‌های فروش، نقش نماینده و صفحه‌ی اشتراک.
 
 <a id="why"></a>
-### <img src="ic-why.svg" width="24" align="center"> &nbsp;چرا Super JinX؟
+### <img src="ic-why.svg" width="24" align="center"> &nbsp;چرا Super gard config؟
 
-| | پنل معمولی روی VPS | **Super JinX** |
+| | پنل معمولی روی VPS | **Super gard config** |
 |---|:---:|:---:|
 | خرید سرور | لازم | **لازم نیست** |
 | نصب با ترمینال | لازم | **لازم نیست** |
@@ -157,7 +157,7 @@ flowchart LR
 <td valign="top">
 
 ### <img src="ic-sub.svg" width="22" align="center"> &nbsp;صفحه‌ی اشتراک اختصاصی
-- کارت هولوگرامی **JINX PASS** با انیمیشن نرم
+- کارت هولوگرامی **GARD CONFIG** با انیمیشن نرم
 - دو زبانه‌ی فارسی و انگلیسی، همه‌ی عددها انگلیسی
 - پینگ زنده‌ی سرور، **QR داخلی** و اتصال سریع
 - اتصال با یک لمس به 6 اپ محبوب
@@ -200,7 +200,7 @@ flowchart LR
     N -- "/dashboard · /api · /sub" --> P["PasarGuard Panel"]
     N -- "5 secret paths" --> X["Xray Core"]
     P -- "gRPC 127.0.0.1" --> X
-    B["JinX Bootstrap<br/>auto setup + self-heal"] --> P
+    B["gard config Bootstrap<br/>auto setup + self-heal"] --> P
     X --> I(("Internet"))
 ```
 
@@ -333,7 +333,7 @@ flowchart LR
 
 1. برو **کاربران ← ساخت کاربر**.
 2. یک **نام کاربری** بنویس.
-3. از بخش قالب، یکی رو انتخاب کن. مثلاً `30GB - 30 روز` (گروه 𝗝𝗶𝗻𝗫، 4 کانفیگ) یا `Pro 30GB - 30 روز` (گروه جینکس پرو، 1 کانفیگ).
+3. از بخش قالب، یکی رو انتخاب کن. مثلاً `30GB - 30 روز` (گروه 𝗝𝗶𝗻𝗫، 4 کانفیگ) یا `Pro 30GB - 30 روز` (گروه گارد کانفیگ پرو، 1 کانفیگ).
 4. ذخیره کن. حجم، تاریخ انقضا و کانفیگ‌ها خودکار تنظیم میشن.
 5. روی کاربر بزن و **لینک اشتراک** رو کپی کن و برای مشتری بفرست.
 
@@ -416,7 +416,7 @@ flowchart LR
 
 | گروه | کانفیگ | پروتکل | انتقال | اثرانگشت TLS | ویژگی |
 |---|---|---|---|---|---|
-| **جینکس پرو** | 𝗣𝗿𝗼 | VLESS | WebSocket + Early Data | Chrome | تک‌کانفیگ با کمترین پینگ |
+| **گارد کانفیگ پرو** | 𝗣𝗿𝗼 | VLESS | WebSocket + Early Data | Chrome | تک‌کانفیگ با کمترین پینگ |
 | **𝗝𝗶𝗻𝗫** | ⚡ 𝗙𝗹𝗮𝘀𝗵 | VLESS | WebSocket | Firefox | سریع و سبک |
 | | 🔥 𝗙𝗶𝗿𝗲 | Trojan | WebSocket | Safari | مناسب iOS |
 | | 💎 𝗗𝗶𝗮𝗺𝗼𝗻𝗱 | VMess | WebSocket | Edge | سازگاری با اپ‌های قدیمی |
@@ -425,11 +425,11 @@ flowchart LR
 اسم کانفیگ‌ها توی اپ کاربر با فونت مخصوص دیده میشه:
 
 ```text
-𝗣𝗿𝗼 | جینکس | 𝙎𝙪𝙥𝙚𝙧 𝗝𝗶𝗻𝗫
-⚡ 𝗙𝗹𝗮𝘀𝗵 | جینکس | 𝙎𝙪𝙥𝙚𝙧 𝗝𝗶𝗻𝗫
-🔥 𝗙𝗶𝗿𝗲 | جینکس | 𝙎𝙪𝙥𝙚𝙧 𝗝𝗶𝗻𝗫
-💎 𝗗𝗶𝗮𝗺𝗼𝗻𝗱 | جینکس | 𝙎𝙪𝙥𝙚𝙧 𝗝𝗶𝗻𝗫
-🌙 𝗡𝗶𝗴𝗵𝘁 | جینکس | 𝙎𝙪𝙥𝙚𝙧 𝗝𝗶𝗻𝗫
+𝗣𝗿𝗼 | گارد کانفیگ | 𝙎𝙪𝙥𝙚𝙧 𝗝𝗶𝗻𝗫
+⚡ 𝗙𝗹𝗮𝘀𝗵 | گارد کانفیگ | 𝙎𝙪𝙥𝙚𝙧 𝗝𝗶𝗻𝗫
+🔥 𝗙𝗶𝗿𝗲 | گارد کانفیگ | 𝙎𝙪𝙥𝙚𝙧 𝗝𝗶𝗻𝗫
+💎 𝗗𝗶𝗮𝗺𝗼𝗻𝗱 | گارد کانفیگ | 𝙎𝙪𝙥𝙚𝙧 𝗝𝗶𝗻𝗫
+🌙 𝗡𝗶𝗴𝗵𝘁 | گارد کانفیگ | 𝙎𝙪𝙥𝙚𝙧 𝗝𝗶𝗻𝗫
 ```
 
 متن بعد از اسم رو با متغیر `CONFIG_TITLE` هر چی بخوای عوض کن.
@@ -464,7 +464,7 @@ https://YOUR-DOMAIN/sub/<token>
 | گروه | قالب‌های فروش آماده |
 |---|---|
 | **𝗝𝗶𝗻𝗫** | 10، 30، 50 و 100 گیگ (30 روزه) · 200 گیگ (60 روزه) · نامحدود (30 روزه) |
-| **جینکس پرو** | Pro 30، 50 و 100 گیگ · Pro نامحدود (همه 30 روزه) |
+| **گارد کانفیگ پرو** | Pro 30، 50 و 100 گیگ · Pro نامحدود (همه 30 روزه) |
 
 **منوی پنل**: داشبورد · کاربران · کلیدهای API · قالب‌ها · عملیات گروهی · تنظیمات · پشتیبانی
 
@@ -475,12 +475,12 @@ https://YOUR-DOMAIN/sub/<token>
 <a id="sub"></a>
 ## <img src="ic-sub.svg" width="30" align="center"> &nbsp;صفحه‌ی اشتراک
 
-- کارت هولوگرامی **JINX PASS** با نام کاربر، وضعیت، تاریخ انقضا و زمان باقی‌مانده
+- کارت هولوگرامی **GARD CONFIG** با نام کاربر، وضعیت، تاریخ انقضا و زمان باقی‌مانده
 - **دو زبانه**: فارسی و انگلیسی با یک لمس، راست‌چین و چپ‌چین خودکار، همه‌ی عددها به شکل 123
 - تاریخ انقضا به **تقویم شمسی** و هشدار نزدیک شدن به پایان حجم یا زمان
 - حلقه‌ی مصرف با حجم مصرف‌شده، باقی‌مانده و کل حجم
 - **پینگ زنده‌ی سرور** از گوشی کاربر با برچسب کیفیت و آنتن
-- لینک اشتراک با **QR داخلی** (لوگوی جینکس وسطش) و کپی همه‌ی کانفیگ‌ها
+- لینک اشتراک با **QR داخلی** (لوگوی گارد کانفیگ وسطش) و کپی همه‌ی کانفیگ‌ها
 - اتصال با یک لمس به V2Box، v2rayNG، Hiddify، Streisand، Happ و NekoBox، با دکمه‌ی شناور «اتصال سریع»
 - فهرست کانفیگ‌ها با آیکون اختصاصی، برچسب پروتکل، QR هر کانفیگ و کپی سریع
 - سبک و روان روی گوشی‌های ضعیف هم (60 فریم)، بدون هیچ سرویس بیرونی
@@ -490,7 +490,7 @@ https://YOUR-DOMAIN/sub/<token>
 <a id="heal"></a>
 ## <img src="ic-heal.svg" width="30" align="center"> &nbsp;ربات پشتیبان و خودترمیمی
 
-ربات پشتیبان Super JinX داخل خود سرور اجرا میشه، توی پنل هیچ دکمه‌ای نداره و همه‌ی کارهاش رو توی لاگ Railway با کلمه‌ی `doctor` ثبت می‌کنه.
+ربات پشتیبان Super gard config داخل خود سرور اجرا میشه، توی پنل هیچ دکمه‌ای نداره و همه‌ی کارهاش رو توی لاگ Railway با کلمه‌ی `doctor` ثبت می‌کنه.
 
 ```mermaid
 flowchart LR
@@ -553,7 +553,7 @@ flowchart LR
 
 | متغیر | پیش‌فرض | کاربرد |
 |---|---|---|
-| `CONFIG_TITLE` | `جینکس \| 𝙎𝙪𝙥𝙚𝙧 𝗝𝗶𝗻𝗫` | متنی که بعد از اسم هر کانفیگ دیده میشه |
+| `CONFIG_TITLE` | `گارد کانفیگ \| 𝙎𝙪𝙥𝙚𝙧 𝗝𝗶𝗻𝗫` | متنی که بعد از اسم هر کانفیگ دیده میشه |
 | `SUBSCRIPTION_PATH` | `sub` | مسیر لینک اشتراک |
 | `PUBLIC_DOMAIN` | دامنه‌ی Railway | فقط برای دامنه‌ی شخصی یا Cloudflare |
 | `DEMO_RESELLER` | `on` | با `off` نماینده‌ی نمونه ساخته نمیشه |
@@ -625,8 +625,8 @@ flowchart LR
 | `bootstrap.py` | تنظیم خودکار پنل، ربات پشتیبان، نگهبان ساب، کلید مالک و تغییر رمز |
 | `genpaths.py` | ساخت مسیرهای اختصاصی کانفیگ برای هر نصب |
 | `nginx.conf.template` · `ws.inc` | وب‌سرور، قفل‌ها، صفحه‌ی آماده‌سازی ساب و تنظیمات WebSocket |
-| `jinx-ui.js` | منوی تمیز پنل، کارت تغییر رمز، کلید مالک و پنجره‌ی «دسترسی مالک» |
-| `sub.html` | صفحه‌ی اشتراک JINX PASS |
+| `gard-config-ui.js` | منوی تمیز پنل، کارت تغییر رمز، کلید مالک و پنجره‌ی «دسترسی مالک» |
+| `sub.html` | صفحه‌ی اشتراک GARD CONFIG |
 | `healthcheck.sh` | تست سلامت پنل و nginx |
 | `env.example` | نمونه‌ی متغیرهای اختیاری |
 | `*.md` · `*.svg` · `preview.png` | مستندات، آیکون‌ها و تصویر پیش‌نمایش |
@@ -639,16 +639,16 @@ flowchart LR
 ## <img src="ic-intro.svg" width="30" align="center"> &nbsp;English
 
 <details>
-<summary><b>Super JinX in English</b></summary>
+<summary><b>Super gard config in English</b></summary>
 
 <br>
 
-**Super JinX** is a free, ready-to-sell reseller panel built on [PasarGuard](https://github.com/PasarGuard/panel). The panel, the Xray core and nginx run in **one Railway service**, and everything is configured automatically: inbounds, hosts, groups, sales templates, reseller role and a custom subscription page.
+**Super gard config** is a free, ready-to-sell reseller panel built on [PasarGuard](https://github.com/PasarGuard/panel). The panel, the Xray core and nginx run in **one Railway service**, and everything is configured automatically: inbounds, hosts, groups, sales templates, reseller role and a custom subscription page.
 
 - **Install:** Fork → Railway *Deploy from GitHub repo* → attach a Volume at `/var/lib/pasarguard` → Generate Domain on port `8080` → Region *EU West* → Redeploy
 - **First login:** `admin` / `admin` at `https://YOUR-DOMAIN/dashboard/`, then change it in *Settings → Change password*
-- **Configs:** 5 configs (VLESS / Trojan / VMess over WebSocket and HTTPUpgrade, TLS 443, early data) in 2 groups: *Pro* (1 best config) and *JinX* (4 different configs)
-- **Subscription page:** JINX PASS card, Persian and English, live ping, built-in QR, one-tap import to V2Box, v2rayNG, Hiddify, Streisand, Happ and NekoBox
+- **Configs:** 5 configs (VLESS / Trojan / VMess over WebSocket and HTTPUpgrade, TLS 443, early data) in 2 groups: *Pro* (1 best config) and *gard config* (4 different configs)
+- **Subscription page:** GARD CONFIG card, Persian and English, live ping, built-in QR, one-tap import to V2Box, v2rayNG, Hiddify, Streisand, Happ and NekoBox
 - **Self-healing:** a support bot fixes the core, groups, hosts and templates; the sub-guard checks subscription links every 3 seconds and repairs them in seconds
 - **Locked:** groups, hosts, cores, nodes and roles can be read but never deleted from outside
 
@@ -675,7 +675,7 @@ flowchart LR
 
 <div align="center">
 
-<img src="logo.svg" width="84" alt="Super JinX">
+<img src="logo.svg" width="84" alt="Super gard config">
 
 <h3>X4G &nbsp;×&nbsp; 𝗝𝗶𝗻𝗫</h3>
 
@@ -690,10 +690,10 @@ flowchart LR
 
 <div align="center">
 
-<a href="https://t.me/+WvKFv0lU_i5lNGE0"><img src="https://img.shields.io/badge/Join-%D8%AC%DB%8C%D9%86%DA%A9%D8%B3%20%7C%20Super%20JinX-26A5E4?style=for-the-badge&logo=telegram&logoColor=white" alt="Join Channel"></a>
+<a href="https://t.me/+WvKFv0lU_i5lNGE0"><img src="https://img.shields.io/badge/Join-%D8%AC%DB%8C%D9%86%DA%A9%D8%B3%20%7C%20Super%20gard config-26A5E4?style=for-the-badge&logo=telegram&logoColor=white" alt="Join Channel"></a>
 
 آپدیت‌ها، آموزش‌ها و پشتیبانی فقط از طریق کانال رسمی<br>
-**[جینکس | 𝙎𝙪𝙥𝙚𝙧 𝗝𝗶𝗻𝗫](https://t.me/+WvKFv0lU_i5lNGE0)**
+**[گارد کانفیگ | 𝙎𝙪𝙥𝙚𝙧 𝗝𝗶𝗻𝗫](https://t.me/+WvKFv0lU_i5lNGE0)**
 
 اگه این پروژه به کارت اومد، با یک **Star** حمایتش کن.
 
@@ -710,7 +710,7 @@ flowchart LR
 
 <div align="center">
 
-<sub><b>Super JinX Panel</b> · X4G × 𝗝𝗶𝗻𝗫 · ساخته‌شده برای اینترنت آزاد</sub>
+<sub><b>Super gard config Panel</b> · X4G × 𝗝𝗶𝗻𝗫 · ساخته‌شده برای اینترنت آزاد</sub>
 
 <img src="https://capsule-render.vercel.app/api?type=waving&color=0:22d3ee,50:5b6cff,100:a855f7&height=110&section=footer" width="100%" alt="">
 

@@ -5,7 +5,7 @@
 - Light and dark theme: all add-on cards use the panel's own theme colors (works with old HSL and new oklch color themes), close button and text sides follow the language direction
 - Nothing spills out on small phones: fields and key box shrink to the screen width; the menu filter never touches links inside the page content
 - GitHub page: preview image of the subscription page, 5-step quick start diagram, Fork and Deploy buttons, honest ping table by test type, project structure, English section and a new footer
-- New subscription page "JINX PASS": holographic pass card, Persian + English with one tap (auto RTL/LTR), all numbers as 123, Persian calendar, live ping from the user's phone, usage ring, built-in QR with the JinX logo, QR for every config, one-tap import to 6 apps, floating quick-connect button, status colours (active, ending soon, expired, data used up, on hold, disabled)
+- New subscription page "GARD CONFIG": holographic pass card, Persian + English with one tap (auto RTL/LTR), all numbers as 123, Persian calendar, live ping from the user's phone, usage ring, built-in QR with the gard config logo, QR for every config, one-tap import to 6 apps, floating quick-connect button, status colours (active, ending soon, expired, data used up, on hold, disabled)
 - Smooth on weak phones: no blur filters on cards, 30 fps particles that pause in the background, animations only on the GPU, page shows even if a script fails
 - Sub-guard: a support bot that opens a real subscription link every 3 seconds. 1st error: page file and subscription settings repaired on the spot. 3rd error: panel restarted and back in a few seconds. A deleted or changed page file is restored in under 3 seconds
 - Keep-alive: panel, nginx and Xray are started again within 1 second if they ever stop (no full service restart)
@@ -18,13 +18,13 @@
 - Lockout is per visitor now (real IP behind Railway), and separate for login, password change and owner access, so one person's mistakes never lock everyone
 - Owner access accepts any password too; the account tool self-tests on every boot ("account tool ... ready" in the logs)
 - Login page: the panel's own "Owner access" button now opens a native-looking dialog (owner key, new username, new password, show/hide, success screen that fills the login form). The extra "Forgot password?" link is gone
-- Fixed: owner key -> new password did not work (PasarGuard's own owner form rejects simple passwords). The owner key is now Super JinX's own (JX-XXXX-XXXX-XXXX) and is used on the login page with "Owner access" to set a new owner username and password
+- Fixed: owner key -> new password did not work (PasarGuard's own owner form rejects simple passwords). The owner key is now Super gard config's own (JX-XXXX-XXXX-XXXX) and is used on the login page with "Owner access" to set a new owner username and password
 - All added buttons now match the PasarGuard buttons (hover, focus ring, disabled state)
 - API Keys > owner key rebuilt in the PasarGuard card style: real buttons (get key, new key, copy key), key field, 5-minute progress bar with countdown, clean login form with labels, clear messages
 - Doctor (automatic support bot): every minute it checks the core and the groups, every 5 minutes the hosts, subscription settings, templates, reseller role and a real subscription link; anything broken or deleted is fixed on the spot, and if subscription links keep failing the panel restarts itself cleanly (at most once an hour)
 - Protected: groups, hosts, cores, nodes and roles can no longer be deleted or changed from the dashboard or the API (read-only from outside; only the built-in setup can change them)
 - Faster first byte on every config: routing without an extra DNS lookup (AsIs), system DNS first with cache, unbuffered WebSocket upload in nginx, more nginx connections
-- The panel never creates users: the 50 GB test user (jinx_user1) left by very old versions is deleted on every boot, whatever its note
+- The panel never creates users: the 50 GB test user (gard_config_user1) left by very old versions is deleted on every boot, whatever its note
 - New: Settings > Change password card in the PasarGuard style (current username + current password + new password twice), works for the owner and resellers
 - Strong checks: the panel verifies the current password, the new one is tested right after saving, 5 wrong tries lock it for 10 minutes, then the panel logs out so you sign in with the new password
 
@@ -35,7 +35,7 @@
 
 ## v6.1.0
 - New README: official icon set, banner, architecture diagram, full guide, X4G × 𝗝𝗶𝗻𝗫 collaboration
-- Config names in the app: `𝗣𝗿𝗼 | جینکس | 𝙎𝙪𝙥𝙚𝙧 𝗝𝗶𝗻𝗫` for Pro, and 𝗙𝗹𝗮𝘀𝗵, 𝗙𝗶𝗿𝗲, 𝗗𝗶𝗮𝗺𝗼𝗻𝗱, 𝗡𝗶𝗴𝗵𝘁 (with icons) for the 𝗝𝗶𝗻𝗫 group
+- Config names in the app: `𝗣𝗿𝗼 | گارد کانفیگ | 𝙎𝙪𝙥𝙚𝙧 𝗝𝗶𝗻𝗫` for Pro, and 𝗙𝗹𝗮𝘀𝗵, 𝗙𝗶𝗿𝗲, 𝗗𝗶𝗮𝗺𝗼𝗻𝗱, 𝗡𝗶𝗴𝗵𝘁 (with icons) for the 𝗝𝗶𝗻𝗫 group
 - Settings, reseller role, groups and hosts are only written when they actually differ
 - Dashboard asks "who am I" once per login and handles expired sessions correctly
 - Public release: fork the repo and deploy on Railway, no file edits needed
@@ -56,7 +56,7 @@
 - Owner password is yours: admin/admin only on first boot, change it any time with the OWNER KEY from the logs (API Keys page)
 - 5-minute owner key now lives inside the "API Keys" page (no extra menu items), with brute-force protection
 - 𝗝𝗶𝗻𝗫 configs are now really different: VLESS-WS, Trojan-WS, VMess-WS, VLESS-HTTPUpgrade (all clients supported)
-- Two groups: "جینکس پرو" (1 Pro config) and "𝗝𝗶𝗻𝗫" (4 different configs), each with its own templates; old group upgraded in place
+- Two groups: "گارد کانفیگ پرو" (1 Pro config) and "𝗝𝗶𝗻𝗫" (4 different configs), each with its own templates; old group upgraded in place
 - Users list starts empty (no auto test user); old test user from earlier versions is removed
 - Self-healing: core auto-restart when disconnected, hosts/group re-checked every 10 min, setup script restarts itself, watchdog restarts the service if the panel stops answering
 

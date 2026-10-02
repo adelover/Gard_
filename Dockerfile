@@ -1,4 +1,4 @@
-# Super JinX Panel: PasarGuard + Xray core + nginx in one Railway service (port 8080)
+# Super gard config Panel: PasarGuard + Xray core + nginx in one Railway service (port 8080)
 FROM pasarguard/node:latest AS node
 
 FROM pasarguard/panel:latest
@@ -13,16 +13,16 @@ COPY --from=node /usr/local/share/xray /usr/local/share/xray
 
 COPY nginx.conf.template /etc/nginx/nginx.conf.template
 COPY ws.inc /etc/nginx/ws.inc
-COPY jinx-ui.js /etc/nginx/jinx-ui.js
+COPY gard-config-ui.js /etc/nginx/gard-config-ui.js
 COPY entrypoint.sh /entrypoint.sh
 COPY bootstrap.py /code/bootstrap.py
 COPY genpaths.py /code/genpaths.py
 COPY sub.html /code/custom_templates/subscription/index.html
-COPY sub.html /etc/jinx/sub.html
-COPY healthcheck.sh /usr/local/bin/jinx-healthcheck
+COPY sub.html /etc/gard-config/sub.html
+COPY healthcheck.sh /usr/local/bin/gard-config-healthcheck
 # strip Windows line endings (safe if files were edited on a phone/PC), then make executable
-RUN sed -i "s/\r$//" /entrypoint.sh /usr/local/bin/jinx-healthcheck /code/bootstrap.py /code/genpaths.py /etc/nginx/nginx.conf.template /etc/nginx/ws.inc /etc/nginx/jinx-ui.js \
- && chmod +x /entrypoint.sh /opt/pg-node/main /usr/local/bin/xray /usr/local/bin/jinx-healthcheck
+RUN sed -i "s/\r$//" /entrypoint.sh /usr/local/bin/gard-config-healthcheck /code/bootstrap.py /code/genpaths.py /etc/nginx/nginx.conf.template /etc/nginx/ws.inc /etc/nginx/gard-config-ui.js \
+ && chmod +x /entrypoint.sh /opt/pg-node/main /usr/local/bin/xray /usr/local/bin/gard-config-healthcheck
 
 ENV PORT=8080 \
     UVICORN_HOST=127.0.0.1 \
@@ -37,5 +37,5 @@ ENV PORT=8080 \
     XRAY_ASSETS_PATH=/usr/local/share/xray
 
 EXPOSE 8080
-HEALTHCHECK --interval=30s --timeout=5s --start-period=60s CMD jinx-healthcheck || exit 1
+HEALTHCHECK --interval=30s --timeout=5s --start-period=60s CMD gard-config-healthcheck || exit 1
 ENTRYPOINT ["/entrypoint.sh"]

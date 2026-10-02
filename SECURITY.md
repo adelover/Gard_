@@ -7,8 +7,8 @@
 - The "Admins" menu is visible to the owner only.
 - Settings > Change password needs the current username and password, is checked by the panel itself, verified after saving, and locked for 10 minutes after 5 wrong tries (per visitor, using the real IP behind Railway).
 - Groups, hosts, cores, nodes and admin roles are read-only from outside (nginx blocks every change), so nobody can delete them from the dashboard or the API.
-- The owner key is made by Super JinX itself: one use, 5 minutes, kept only in memory, 5 wrong tries lock it for 10 minutes. It works even with simple passwords (PasarGuard's own owner form rejects them).
+- The owner key is made by Super gard config itself: one use, 5 minutes, kept only in memory, 5 wrong tries lock it for 10 minutes. It works even with simple passwords (PasarGuard's own owner form rejects them).
 - The internal node API key and TLS certificate are generated on first boot and stored on the volume.
 - The subscription page file is checked every 3 seconds and restored from the original copy inside the image if it is missing or changed.
 
-Found a problem? Report it in the [Super JinX channel](https://t.me/+WvKFv0lU_i5lNGE0).
+Found a problem? Report it in the [Super gard config channel](https://t.me/+WvKFv0lU_i5lNGE0).
