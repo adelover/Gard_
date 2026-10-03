@@ -2,12 +2,12 @@
 
 <img src="banner.svg" width="100%" alt="Gard Config Panel">
 
-<a href="https://t.me/gard_config"><img src="https://readme-typing-svg.demolab.com?font=Inter&weight=800&size=22&duration=2600&pause=700&color=6C7BFF&center=true&vCenter=true&width=620&lines=One-click+Reseller+Panel+on+Railway;PasarGuard+%2B+Xray+in+a+single+service;5+configs+%C2%B7+2+groups+%C2%B7+self-healing;Free+forever+%C2%B7+Gard+Config" alt="Gard Config"></a>
+<a href="https://t.me/gard_config"><img src="https://readme-typing-svg.demolab.com?font=Inter&weight=800&size=22&duration=2600&pause=700&color=6C7BFF&center=true&vCenter=true&width=620&lines=One-click+Reseller+Panel+on+Railway;PasarGuard+%2B+Xray+in+a+single+service;8+configs+%C2%B7+2+groups+%C2%B7+self-healing;Free+forever+%C2%B7+Gard+Config" alt="Gard Config"></a>
 
 <h1>Gard Config Panel</h1>
 
 <p><b>پنل نمایندگی حرفه‌ای، رایگان و متن‌باز بر پایه‌ی PasarGuard</b><br>
-یک Fork تا یک سرویس کامل: پنل، هسته‌ی Xray و 5 کانفیگ آماده، همه روی Railway</p>
+یک Fork تا یک سرویس کامل: پنل، هسته‌ی Xray و 8 کانفیگ آماده، همه روی Railway</p>
 
 <a href="https://t.me/gard_config"><img src="https://img.shields.io/badge/Telegram-Gard%20Config-26A5E4?style=for-the-badge&logo=telegram&logoColor=white" alt="Telegram"></a>
 <img src="https://img.shields.io/badge/Version-6.1.3-5b6cff?style=for-the-badge" alt="Version">
@@ -49,7 +49,7 @@
 
 <div align="center">
 
-| <img src="ic-features.svg" width="34"><br>**1 سرویس** | <img src="ic-configs.svg" width="34"><br>**5 کانفیگ** | <img src="ic-reseller.svg" width="34"><br>**2 گروه** | <img src="ic-sub.svg" width="34"><br>**10 قالب فروش** | <img src="ic-apps.svg" width="34"><br>**6 اپ** | <img src="ic-heal.svg" width="34"><br>**خودترمیم** |
+| <img src="ic-features.svg" width="34"><br>**1 سرویس** | <img src="ic-configs.svg" width="34"><br>**8 کانفیگ** | <img src="ic-reseller.svg" width="34"><br>**2 گروه** | <img src="ic-sub.svg" width="34"><br>**10 قالب فروش** | <img src="ic-apps.svg" width="34"><br>**6 اپ** | <img src="ic-heal.svg" width="34"><br>**خودترمیم** |
 |:---:|:---:|:---:|:---:|:---:|:---:|
 | پنل + Xray + nginx | 3 پروتکل، 2 انتقال | پرو و Gard Config | آماده‌ی فروش | اتصال با یک لمس | 24 ساعته |
 
@@ -137,7 +137,7 @@ flowchart LR
 <td width="50%" valign="top">
 
 ### <img src="ic-configs.svg" width="22" align="center"> &nbsp;کانفیگ‌های حرفه‌ای
-- **5 کانفیگ** با 3 پروتکل: VLESS، Trojan و VMess
+- **8 کانفیگ** با پروتکل‌های VLESS، Trojan و VMess با انتقال‌های WS / HTTPUpgrade / XHTTP
 - دو نوع انتقال: WebSocket و HTTPUpgrade
 - TLS روی پورت 443 با `alpn=http/1.1`
 - Early Data (`ed=2560`) برای پینگ کمتر
@@ -278,7 +278,7 @@ flowchart LR
 </details>
 
 > [!NOTE]
-> **هر نصب، مسیرهای اختصاصی خودش رو داره.** موقع اولین اجرا مسیر هر 5 کانفیگ تصادفی ساخته میشه و روی Volume می‌مونه. هر Fork روی سرور جداگانه‌ی خودش اجرا میشه، پس پنل‌ها هیچ منبعی رو با هم شریک نیستن و از سرعت هم کم نمی‌کنن.
+> **هر نصب، مسیرهای اختصاصی خودش رو داره.** موقع اولین اجرا مسیر هر 8 کانفیگ تصادفی ساخته میشه و روی Volume می‌مونه. هر Fork روی سرور جداگانه‌ی خودش اجرا میشه، پس پنل‌ها هیچ منبعی رو با هم شریک نیستن و از سرعت هم کم نمی‌کنن.
 
 <br>
 
@@ -333,7 +333,7 @@ flowchart LR
 
 1. برو **کاربران ← ساخت کاربر**.
 2. یک **نام کاربری** بنویس.
-3. از بخش قالب، یکی رو انتخاب کن. مثلاً `30GB - 30 روز` (گروه Gard Config، 4 کانفیگ) یا `Pro 30GB - 30 روز` (گروه گارد کانفیگ پرو، 1 کانفیگ).
+3. از بخش قالب، یکی رو انتخاب کن. مثلاً `30GB - 30 روز` (گروه Gard Config، 7 کانفیگ) یا `Pro 30GB - 30 روز` (گروه گارد کانفیگ پرو، 1 کانفیگ).
 4. ذخیره کن. حجم، تاریخ انقضا و کانفیگ‌ها خودکار تنظیم میشن.
 5. روی کاربر بزن و **لینک اشتراک** رو کپی کن و برای مشتری بفرست.
 
@@ -421,6 +421,9 @@ flowchart LR
 | | 🔥 𝗙𝗶𝗿𝗲 | Trojan | WebSocket | Safari | مناسب iOS |
 | | 💎 𝗗𝗶𝗮𝗺𝗼𝗻𝗱 | VMess | WebSocket | Edge | سازگاری با اپ‌های قدیمی |
 | | 🌙 𝗡𝗶𝗴𝗵𝘁 | VLESS | HTTPUpgrade | iOS | پایدار در شبکه‌های سخت |
+| | 🚀 𝗫𝗛𝗧𝗧𝗣 | VLESS | XHTTP | Chrome | مدرن و مقاوم |
+| | 🛡 𝗧𝗿𝗼𝗷𝗮𝗻 | Trojan | HTTPUpgrade | QQ | تنوع بیشتر Trojan |
+| | 💠 𝗩𝗠𝗲𝘀𝘀 | VMess | HTTPUpgrade | Random | سازگاری گسترده |
 
 اسم کانفیگ‌ها توی اپ کاربر با فونت مخصوص دیده میشه:
 
@@ -430,6 +433,9 @@ flowchart LR
 🔥 𝗙𝗶𝗿𝗲 | گارد کانفیگ | Gard Config
 💎 𝗗𝗶𝗮𝗺𝗼𝗻𝗱 | گارد کانفیگ | Gard Config
 🌙 𝗡𝗶𝗴𝗵𝘁 | گارد کانفیگ | Gard Config
+🚀 𝗫𝗛𝗧𝗧𝗣 | گارد کانفیگ | Gard Config
+🛡 𝗧𝗿𝗼𝗷𝗮𝗻 | گارد کانفیگ | Gard Config
+💠 𝗩𝗠𝗲𝘀𝘀 | گارد کانفیگ | Gard Config
 ```
 
 متن بعد از اسم رو با متغیر `CONFIG_TITLE` هر چی بخوای عوض کن.
@@ -647,7 +653,7 @@ flowchart LR
 
 - **Install:** Fork → Railway *Deploy from GitHub repo* → attach a Volume at `/var/lib/pasarguard` → Generate Domain on port `8080` → Region *EU West* → Redeploy
 - **First login:** `admin` / `admin` at `https://YOUR-DOMAIN/dashboard/`, then change it in *Settings → Change password*
-- **Configs:** 5 configs (VLESS / Trojan / VMess over WebSocket and HTTPUpgrade, TLS 443, early data) in 2 groups: *Pro* (1 best config) and *Gard Config* (4 different configs)
+- **Configs:** 8 configs (VLESS / Trojan / VMess over WebSocket and HTTPUpgrade, TLS 443, early data) in 2 groups: *Pro* (1 best config) and *Gard Config* (4 different configs)
 - **Subscription page:** GARD PASS card, Persian and English, live ping, built-in QR, one-tap import to V2Box, v2rayNG, Hiddify, Streisand, Happ and NekoBox
 - **Self-healing:** a support bot fixes the core, groups, hosts and templates; the sub-guard checks subscription links every 3 seconds and repairs them in seconds
 - **Locked:** groups, hosts, cores, nodes and roles can be read but never deleted from outside

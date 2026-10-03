@@ -8,7 +8,7 @@ import subprocess
 USER, PASS = "admin", "admin"          # first-boot login; change it later in the panel or with the owner key
 RESELLER_USER, RESELLER_PASS, RESELLER_GB = "reseller", "reseller", 50
 CORE_NAME, NODE_NAME = "Gard-Core", "Gard-Core"
-PRO_GROUP, STD_GROUP = "گارد کانفیگ پرو", "Gard Config"   # 1 premium config / 4 different configs
+PRO_GROUP, STD_GROUP = "گارد کانفیگ پرو", "Gard Config"   # 1 premium config / 7 different configs
 OLD_GROUP = "jinx-all"                         # from earlier versions, renamed to STD_GROUP (keeps its users)
 TITLE = os.getenv("CONFIG_TITLE", "گارد کانفیگ | Gard Config")   # shown after every config name
 GB = 1024 ** 3
@@ -16,16 +16,20 @@ DAY = 86400
 
 # All configs go through Railway's TLS edge on 443 with alpn=http/1.1 (the only thing Railway serves).
 # گارد کانفیگ پرو: the single most compatible + lowest-latency setup: VLESS + WebSocket + early data, Chrome fp.
-# Gard Config: 4 configs that are really different (protocol / transport / fingerprint / path), all supported
-#        by v2rayNG, V2Box, Hiddify, Streisand, NekoBox, Happ, Clash Meta and sing-box.
+# Gard Config: multiple configs that are really different (protocol / transport / fingerprint / path).
+# Supported by v2rayNG, V2Box, Hiddify, Streisand, NekoBox, Happ, Clash Meta and sing-box.
 # ?ed=2560 = early data: the first packet rides on the handshake -> one round trip less per connection.
+# Note: REALITY / Hysteria2 / TUIC / WireGuard need raw UDP or special ports and do NOT work on Railway edge.
 INBOUNDS = [
-    # tag              proto     port  net            server path                                   fp         name       group
-    ("JX-VLESS-WS-1", "vless",  10001, "ws",          "/ws/",     "chrome",  "𝗣𝗿𝗼",        "pro"),
-    ("JX-VLESS-WS-2", "vless",  10002, "ws",          "/stream/", "firefox", "⚡ 𝗙𝗹𝗮𝘀𝗵",    "std"),
-    ("JX-TROJAN-WS",  "trojan", 10003, "ws",          "/live/",   "safari",  "🔥 𝗙𝗶𝗿𝗲",     "std"),
-    ("JX-VMESS-WS",   "vmess",  10004, "ws",          "/gw/",    "edge",    "💎 𝗗𝗶𝗮𝗺𝗼𝗻𝗱", "std"),
-    ("JX-VLESS-HU",   "vless",  10005, "httpupgrade", "/cdn/",    "ios",     "🌙 𝗡𝗶𝗴𝗵𝘁",    "std"),
+    # tag               proto          port   net            path        fp         name            group
+    ("JX-VLESS-WS-1",  "vless",        10001, "ws",          "/ws/",     "chrome",  "𝗣𝗿𝗼",         "pro"),
+    ("JX-VLESS-WS-2",  "vless",        10002, "ws",          "/stream/", "firefox", "⚡ 𝗙𝗹𝗮𝘀𝗵",     "std"),
+    ("JX-TROJAN-WS",   "trojan",       10003, "ws",          "/live/",   "safari",  "🔥 𝗙𝗶𝗿𝗲",      "std"),
+    ("JX-VMESS-WS",    "vmess",        10004, "ws",          "/gw/",     "edge",    "💎 𝗗𝗶𝗮𝗺𝗼𝗻𝗱",  "std"),
+    ("JX-VLESS-HU",    "vless",        10005, "httpupgrade", "/cdn/",    "ios",     "🌙 𝗡𝗶𝗴𝗵𝘁",     "std"),
+    ("JX-VLESS-XHTTP", "vless",        10006, "xhttp",       "/xhttp/",  "chrome",  "🚀 𝗫𝗛𝗧𝗧𝗣",    "std"),
+    ("JX-TROJAN-HU",   "trojan",       10007, "httpupgrade", "/tj/",     "qq",      "🛡 𝗧𝗿𝗼𝗷𝗮𝗻",   "std"),
+    ("JX-VMESS-HU",    "vmess",        10008, "httpupgrade", "/vm/",     "random",  "💠 𝗩𝗠𝗲𝘀𝘀",    "std"),
 ]
 EARLY_DATA = "?ed=2560"
 # real paths are unique per install (genpaths.py writes them to the volume before nginx starts)
@@ -298,11 +302,18 @@ def login():
 
 def inbound(tag, proto, port, net, path):
     stream = {"network": net, "security": "none"}
-    if net == "ws": stream["wsSettings"] = {"path": path}
-    elif net == "httpupgrade": stream["httpupgradeSettings"] = {"path": path}
-    elif net == "xhttp": stream["xhttpSettings"] = {"path": path, "mode": "auto"}
+    if net == "ws":
+        stream["wsSettings"] = {"path": path}
+    elif net == "httpupgrade":
+        stream["httpupgradeSettings"] = {"path": path}
+    elif net == "xhttp":
+        stream["xhttpSettings"] = {"path": path, "mode": "auto"}
     settings = {"clients": []}
-    if proto == "vless": settings["decryption"] = "none"
+    if proto == "vless":
+        settings["decryption"] = "none"
+    elif proto == "shadowsocks":
+        # method is managed per-client by PasarGuard; keep a modern default for the inbound shell
+        settings = {"method": "aes-128-gcm", "password": "gard-config-placeholder", "clients": []}
     return {"tag": tag, "listen": "127.0.0.1", "port": port, "protocol": proto,
             "settings": settings, "streamSettings": stream,
             "sniffing": {"enabled": True, "destOverride": ["http", "tls", "quic"], "routeOnly": True}}
