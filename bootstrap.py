@@ -10,28 +10,28 @@ RESELLER_USER, RESELLER_PASS, RESELLER_GB = "reseller", "reseller", 50
 CORE_NAME, NODE_NAME = "Gard-Core", "Gard-Core"
 PRO_GROUP, STD_GROUP = "گارد کانفیگ پرو", "Gard Config"   # 1 premium config / 7 different configs
 OLD_GROUP = "jinx-all"                         # from earlier versions, renamed to STD_GROUP (keeps its users)
-TITLE = os.getenv("CONFIG_TITLE", "گارد کانفیگ | Gard Config")   # shown after every config name
+TITLE = os.getenv("CONFIG_TITLE", "Gard Config")   # shown after every config name
 GB = 1024 ** 3
 DAY = 86400
 
-# All configs go through Railway's TLS edge on 443 with alpn=http/1.1 (the only thing Railway serves).
-# گارد کانفیگ پرو: the single most compatible + lowest-latency setup: VLESS + WebSocket + early data, Chrome fp.
-# Gard Config: multiple configs that are really different (protocol / transport / fingerprint / path).
-# Supported by v2rayNG, V2Box, Hiddify, Streisand, NekoBox, Happ, Clash Meta and sing-box.
-# ?ed=2560 = early data: the first packet rides on the handshake -> one round trip less per connection.
-# Note: REALITY / Hysteria2 / TUIC / WireGuard need raw UDP or special ports and do NOT work on Railway edge.
+# Gard Config v7 — operator-optimized for Railway (IR mobile: MCI / Irancell / Rightel).
+# Only WS + HTTPUpgrade over TLS:443 (Railway edge). Paths look like normal CDN/API traffic.
+# Fingerprints vary so at least one config works on each operator. Early-data only on selected WS.
 INBOUNDS = [
-    # tag               proto          port   net            path        fp         name            group
-    ("JX-VLESS-WS-1",  "vless",        10001, "ws",          "/ws/",     "chrome",  "𝗣𝗿𝗼",         "pro"),
-    ("JX-VLESS-WS-2",  "vless",        10002, "ws",          "/stream/", "firefox", "⚡ 𝗙𝗹𝗮𝘀𝗵",     "std"),
-    ("JX-TROJAN-WS",   "trojan",       10003, "ws",          "/live/",   "safari",  "🔥 𝗙𝗶𝗿𝗲",      "std"),
-    ("JX-VMESS-WS",    "vmess",        10004, "ws",          "/gw/",     "edge",    "💎 𝗗𝗶𝗮𝗺𝗼𝗻𝗱",  "std"),
-    ("JX-VLESS-HU",    "vless",        10005, "httpupgrade", "/cdn/",    "ios",     "🌙 𝗡𝗶𝗴𝗵𝘁",     "std"),
-    ("JX-VLESS-XHTTP", "vless",        10006, "xhttp",       "/xhttp/",  "chrome",  "🚀 𝗫𝗛𝗧𝗧𝗣",    "std"),
-    ("JX-TROJAN-HU",   "trojan",       10007, "httpupgrade", "/tj/",     "qq",      "🛡 𝗧𝗿𝗼𝗷𝗮𝗻",   "std"),
-    ("JX-VMESS-HU",    "vmess",        10008, "httpupgrade", "/vm/",     "random",  "💠 𝗩𝗠𝗲𝘀𝘀",    "std"),
+    # tag               proto     port   net            path              fp         name              group
+    ("JX-VLESS-WS-1",  "vless",  10001, "ws",          "/assets/js/",    "chrome",  "𝗣𝗿𝗼",           "pro"),
+    ("JX-VLESS-WS-2",  "vless",  10002, "ws",          "/cdn/static/",   "firefox", "⚡ 𝗙𝗹𝗮𝘀𝗵",       "std"),
+    ("JX-TROJAN-WS",   "trojan", 10003, "ws",          "/media/live/",   "safari",  "🔥 𝗙𝗶𝗿𝗲",        "std"),
+    ("JX-VMESS-WS",    "vmess",  10004, "ws",          "/api/gateway/",  "edge",    "💎 𝗗𝗶𝗮𝗺𝗼𝗻𝗱",    "std"),
+    ("JX-VLESS-HU",    "vless",  10005, "httpupgrade", "/v1/stream/",    "ios",     "🌙 𝗡𝗶𝗴𝗵𝘁",       "std"),
+    ("JX-VLESS-WS-3",  "vless",  10006, "ws",          "/static/app/",   "chrome",  "🚀 𝗦𝗽𝗲𝗲𝗱",      "std"),
+    ("JX-VLESS-WS-4",  "vless",  10007, "ws",          "/gateway/v2/",   "qq",      "🛡 𝗦𝗵𝗶𝗲𝗹𝗱",     "std"),
+    ("JX-VLESS-HU-2",  "vless",  10008, "httpupgrade", "/edge/relay/",   "random",  "💠 𝗚𝗮𝘁𝗲",       "std"),
 ]
+# early data only on these tags (WS + VLESS/Trojan that benefit; skip if operator breaks on ed)
+EARLY_DATA_TAGS = {"JX-VLESS-WS-1", "JX-VLESS-WS-2", "JX-VLESS-WS-3", "JX-TROJAN-WS"}
 EARLY_DATA = "?ed=2560"
+
 # real paths are unique per install (genpaths.py writes them to the volume before nginx starts)
 try:
     _P = json.load(open(f"{DATA}/paths.json"))
@@ -332,7 +332,7 @@ CORE_CONFIG = {
         {"type": "field", "ip": ["geoip:private"], "outboundTag": "BLOCK"},
         {"type": "field", "protocol": ["bittorrent"], "outboundTag": "BLOCK"},
     ]},
-    "policy": {"levels": {"0": {"handshake": 4, "connIdle": 300, "uplinkOnly": 1, "downlinkOnly": 1, "bufferSize": 512}}},
+    "policy": {"levels": {"0": {"handshake": 8, "connIdle": 360, "uplinkOnly": 2, "downlinkOnly": 5, "bufferSize": 1024}}},
 }
 
 def ensure_core():
@@ -401,8 +401,10 @@ def ensure_hosts():
             req("DELETE", f"/api/host/{h['id']}")
     changed = 0
     for idx, (tag, proto, port, net, path, fp, name, grp) in enumerate(INBOUNDS):
+        # early data only on selected WS tags (some mobile operators break on ?ed=)
+        host_path = (path + EARLY_DATA) if tag in EARLY_DATA_TAGS else path
         body = {"remark": f"{name} | {TITLE}", "allowinsecure": False, "address": [DOMAIN], "inbound_tag": tag,
-                "port": 443, "sni": [DOMAIN], "host": [DOMAIN], "path": path + EARLY_DATA, "security": "tls",
+                "port": 443, "sni": [DOMAIN], "host": [DOMAIN], "path": host_path, "security": "tls",
                 "alpn": ["http/1.1"], "fingerprint": fp, "priority": idx + 1, "is_disabled": False}
         mine = [h for h in existing if h.get("inbound_tag") == tag]
         if mine:

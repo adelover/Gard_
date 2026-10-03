@@ -10,7 +10,7 @@
 یک Fork تا یک سرویس کامل: پنل، هسته‌ی Xray و 8 کانفیگ آماده، همه روی Railway</p>
 
 <a href="https://t.me/gard_config"><img src="https://img.shields.io/badge/Telegram-Gard%20Config-26A5E4?style=for-the-badge&logo=telegram&logoColor=white" alt="Telegram"></a>
-<img src="https://img.shields.io/badge/Version-6.1.3-5b6cff?style=for-the-badge" alt="Version">
+<img src="https://img.shields.io/badge/Version-7.0.0-5b6cff?style=for-the-badge" alt="Version">
 <img src="https://img.shields.io/badge/Price-Free-16a34a?style=for-the-badge" alt="Free">
 <br>
 <img src="https://img.shields.io/badge/Deploy-Railway-0B0D0E?style=for-the-badge&logo=railway&logoColor=white" alt="Railway">
@@ -43,7 +43,7 @@
 <br>
 
 > [!IMPORTANT]
-> **تازه‌های نسخه‌ی 6.1.3:** صفحه‌ی اشتراک جدید GARD PASS دو زبانه · نگهبان ساب لینک 3 ثانیه‌ای · پینگ پایدارتر و مصرف رم کمتر · ربات پشتیبان خودکار که هر خرابی رو همونجا درست می‌کنه · تغییر رمز از داخل تنظیمات · بازیابی ورود با کلید مالک از صفحه‌ی ورود · قفل گروه‌ها و هاست‌ها در برابر حذف · کانفیگ‌های سریع‌تر · صفحه‌ی اشتراک مقاوم‌تر
+> **تازه‌های نسخه‌ی 7.0.0 — Operator Edition:** صفحه‌ی اشتراک جدید GARD PASS دو زبانه · نگهبان ساب لینک 3 ثانیه‌ای · پینگ پایدارتر و مصرف رم کمتر · ربات پشتیبان خودکار که هر خرابی رو همونجا درست می‌کنه · تغییر رمز از داخل تنظیمات · بازیابی ورود با کلید مالک از صفحه‌ی ورود · قفل گروه‌ها و هاست‌ها در برابر حذف · کانفیگ‌های سریع‌تر · صفحه‌ی اشتراک مقاوم‌تر
 
 <br>
 
@@ -421,9 +421,9 @@ flowchart LR
 | | 🔥 𝗙𝗶𝗿𝗲 | Trojan | WebSocket | Safari | مناسب iOS |
 | | 💎 𝗗𝗶𝗮𝗺𝗼𝗻𝗱 | VMess | WebSocket | Edge | سازگاری با اپ‌های قدیمی |
 | | 🌙 𝗡𝗶𝗴𝗵𝘁 | VLESS | HTTPUpgrade | iOS | پایدار در شبکه‌های سخت |
-| | 🚀 𝗫𝗛𝗧𝗧𝗣 | VLESS | XHTTP | Chrome | مدرن و مقاوم |
-| | 🛡 𝗧𝗿𝗼𝗷𝗮𝗻 | Trojan | HTTPUpgrade | QQ | تنوع بیشتر Trojan |
-| | 💠 𝗩𝗠𝗲𝘀𝘀 | VMess | HTTPUpgrade | Random | سازگاری گسترده |
+| | 🚀 𝗦𝗽𝗲𝗲𝗱 | VLESS | WebSocket | Chrome | سریع و پایدار |
+| | 🛡 𝗦𝗵𝗶𝗲𝗹𝗱 | VLESS | WebSocket | QQ | مسیر جدا و مقاوم |
+| | 💠 𝗚𝗮𝘁𝗲 | VLESS | HTTPUpgrade | Random | پایدار در شبکه سخت |
 
 اسم کانفیگ‌ها توی اپ کاربر با فونت مخصوص دیده میشه:
 
@@ -433,9 +433,9 @@ flowchart LR
 🔥 𝗙𝗶𝗿𝗲 | گارد کانفیگ | Gard Config
 💎 𝗗𝗶𝗮𝗺𝗼𝗻𝗱 | گارد کانفیگ | Gard Config
 🌙 𝗡𝗶𝗴𝗵𝘁 | گارد کانفیگ | Gard Config
-🚀 𝗫𝗛𝗧𝗧𝗣 | گارد کانفیگ | Gard Config
-🛡 𝗧𝗿𝗼𝗷𝗮𝗻 | گارد کانفیگ | Gard Config
-💠 𝗩𝗠𝗲𝘀𝘀 | گارد کانفیگ | Gard Config
+🚀 𝗦𝗽𝗲𝗲𝗱 | گارد کانفیگ | Gard Config
+🛡 𝗦𝗵𝗶𝗲𝗹𝗱 | گارد کانفیگ | Gard Config
+💠 𝗚𝗮𝘁𝗲 | گارد کانفیگ | Gard Config
 ```
 
 متن بعد از اسم رو با متغیر `CONFIG_TITLE` هر چی بخوای عوض کن.

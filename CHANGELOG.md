@@ -1,5 +1,30 @@
 # Changelog
 
+## 7.0.0 — Gard Config Operator Edition
+
+### Why this release
+Built for Iranian mobile operators (همراه اول / ایرانسل / رایتل) on Railway.
+
+### Connectivity
+- CDN-style paths (`/assets/js/`, `/cdn/static/`, `/api/gateway/`, …) instead of VPN-looking paths
+- Selective early-data: only on configs that benefit; skipped where operators break on `?ed=`
+- 6 TLS fingerprints (chrome, firefox, safari, edge, ios, qq, random) so at least one works per network
+- 8 ready configs: VLESS/Trojan/VMess over WebSocket + VLESS over HTTPUpgrade
+- Longer idle timeouts and larger buffers for flaky mobile sockets
+- nginx keepalive and proxy headers tuned for mobile
+
+### Branding
+- Fully personalized as **Gard Config** / **GARD PASS**
+- Default profile title: `Gard Config`
+- Telegram: https://t.me/gard_config
+
+### Stability
+- Old install paths are never broken; new slots are added safely
+- Obsolete experimental tags (XHTTP / Trojan-HU / VMess-HU) auto-cleaned
+- Self-healing bootstrap unchanged
+
+---
+
 ## v6.1.3
 - Panel add-ons follow the panel language: Persian, English, Russian and Chinese (menu filter, owner key card, change password card, owner access dialog, error messages), and rebuild themselves when you switch language
 - Light and dark theme: all add-on cards use the panel's own theme colors (works with old HSL and new oklch color themes), close button and text sides follow the language direction
