@@ -1,22 +1,22 @@
-"""Super gard config bootstrap: zero-touch setup for PasarGuard on Railway. Idempotent: safe on every boot."""
+"""Gard Config bootstrap: zero-touch setup for PasarGuard on Railway. Idempotent: safe on every boot."""
 import json, os, sys, threading, time, urllib.error, urllib.parse, urllib.request
 
 BASE = "http://127.0.0.1:8000"
-DATA = os.getenv("GARD_CONFIG_DATA", "/var/lib/pasarguard")
+DATA = os.getenv("JINX_DATA", "/var/lib/pasarguard")
 DOMAIN = (os.getenv("PUBLIC_DOMAIN") or os.getenv("RAILWAY_PUBLIC_DOMAIN") or "").strip()
 import subprocess
 USER, PASS = "admin", "admin"          # first-boot login; change it later in the panel or with the owner key
 RESELLER_USER, RESELLER_PASS, RESELLER_GB = "reseller", "reseller", 50
-CORE_NAME, NODE_NAME = "GardConfig-Core", "GardConfig-Core"
-PRO_GROUP, STD_GROUP = "گارد کانفیگ پرو", "𝗝𝗶𝗻𝗫"   # 1 premium config / 4 different configs
-OLD_GROUP = "gard-config-all"                         # from earlier versions, renamed to STD_GROUP (keeps its users)
-TITLE = os.getenv("CONFIG_TITLE", "گارد کانفیگ | 𝙎𝙪𝙥𝙚𝙧 𝗝𝗶𝗻𝗫")   # shown after every config name
+CORE_NAME, NODE_NAME = "Gard-Core", "Gard-Core"
+PRO_GROUP, STD_GROUP = "گارد کانفیگ پرو", "Gard Config"   # 1 premium config / 4 different configs
+OLD_GROUP = "jinx-all"                         # from earlier versions, renamed to STD_GROUP (keeps its users)
+TITLE = os.getenv("CONFIG_TITLE", "گارد کانفیگ | Gard Config")   # shown after every config name
 GB = 1024 ** 3
 DAY = 86400
 
 # All configs go through Railway's TLS edge on 443 with alpn=http/1.1 (the only thing Railway serves).
 # گارد کانفیگ پرو: the single most compatible + lowest-latency setup: VLESS + WebSocket + early data, Chrome fp.
-# 𝗝𝗶𝗻𝗫: 4 configs that are really different (protocol / transport / fingerprint / path), all supported
+# Gard Config: 4 configs that are really different (protocol / transport / fingerprint / path), all supported
 #        by v2rayNG, V2Box, Hiddify, Streisand, NekoBox, Happ, Clash Meta and sing-box.
 # ?ed=2560 = early data: the first packet rides on the handshake -> one round trip less per connection.
 INBOUNDS = [
@@ -40,7 +40,7 @@ TEMPLATES = [  # name, GB, days, group
     ("Pro 30GB - 30 روز", 30, 30, "pro"), ("Pro 50GB - 30 روز", 50, 30, "pro"),
     ("Pro 100GB - 30 روز", 100, 30, "pro"), ("Pro نامحدود - 30 روز", 0, 30, "pro"),
 ]
-OLD_TEST_USERS = ("gard_config_user1",)   # 50 GB test user that very old versions created by themselves
+OLD_TEST_USERS = ("jinx_user1",)   # 50 GB test user that very old versions created by themselves
 
 TOKEN = None
 
@@ -253,7 +253,7 @@ def ensure_owner():
     """First boot: owner = admin/admin. After that the password is YOURS: change it in the panel
     or with the owner key (API Keys page). Bootstrap never touches it again."""
     if owner_token() is None:
-        code, res = req("POST", "/api/setup/owner", {"key": temp_key(), "username": "gardconfigowner", "password": strong_tmp()})
+        code, res = req("POST", "/api/setup/owner", {"key": temp_key(), "username": "jinxowner", "password": strong_tmp()})
         if code not in (200, 201, 409): log(f"owner create failed {code}: {res}")
         if os.path.exists(MARKER): os.remove(MARKER)
     if not os.path.exists(MARKER):
@@ -327,7 +327,7 @@ CORE_CONFIG = {
 def ensure_core():
     cores = as_list(must("GET", "/api/cores"), "cores")
     for c in cores:
-        if c.get("name") in (CORE_NAME, "gard-config-core"):
+        if c.get("name") in (CORE_NAME, "jinx-core"):
             if c.get("name") == CORE_NAME and c.get("config") == CORE_CONFIG:
                 log("core ok (unchanged)", c["id"]); return c["id"]
             body = {"name": CORE_NAME, "config": CORE_CONFIG, "exclude_inbound_tags": [], "fallbacks_inbound_tags": []}
@@ -347,7 +347,7 @@ def ensure_node(core_id):
             "connection_type": "grpc", "server_ca": cert, "keep_alive": 60,
             "core_config_id": core_id, "api_key": api_key}
     for n in as_list(must("GET", "/api/nodes"), "nodes"):
-        if n.get("name") in (NODE_NAME, "gard-config-local"):
+        if n.get("name") in (NODE_NAME, "jinx-local"):
             must("PUT", f"/api/node/{n['id']}", body); log("node updated"); return
     must("POST", "/api/node", body); log("node created")
 
@@ -385,7 +385,7 @@ def ensure_hosts():
         log("WARNING: no public domain yet (Settings > Networking > Generate Domain), hosts skipped"); return
     existing = as_list(must("GET", "/api/hosts"), "hosts")
     wanted = {i[0] for i in INBOUNDS}
-    for h in existing:  # clean hosts left from older gard config versions
+    for h in existing:  # clean hosts left from older Gard Config versions
         if str(h.get("inbound_tag") or "").startswith("JX-") and h.get("inbound_tag") not in wanted:
             req("DELETE", f"/api/host/{h['id']}")
     changed = 0
@@ -500,7 +500,7 @@ def remove_demo_user():
             log("removed old auto-created test user", name) if c in (200, 204) else log(f"could not remove {name}: {c}")
 
 def attach_orphans(gids):
-    """Users created without a group are put in the 𝗝𝗶𝗻𝗫 group (4 configs). Users with a group are never touched."""
+    """Users created without a group are put in the Gard Config group (4 configs). Users with a group are never touched."""
     code, res = req("GET", "/api/users?no_group=true&limit=200")
     if code == 401:
         login(); code, res = req("GET", "/api/users?no_group=true&limit=200")
@@ -553,8 +553,8 @@ def restart_panel(reason):
             except Exception: pass
 
 # ---------------- sub-guard: fast support bot for subscription links (checks every 3 s) ----------------
-SUB_TEMPLATE = os.getenv("GARD_CONFIG_SUB_TEMPLATE", "/code/custom_templates/subscription/index.html")
-SUB_PRISTINE = os.getenv("GARD_CONFIG_SUB_PRISTINE", "/etc/gard-config/sub.html")
+SUB_TEMPLATE = os.getenv("JINX_SUB_TEMPLATE", "/code/custom_templates/subscription/index.html")
+SUB_PRISTINE = os.getenv("JINX_SUB_PRISTINE", "/etc/jinx/sub.html")
 HEAL = threading.Lock()          # the doctor and the sub-guard never fix the same thing at the same time
 _PRISTINE = {}
 
@@ -607,7 +607,7 @@ def sub_guard():
             if not st["path"] or time.time() - st["t"] > 60:
                 st["path"], st["t"] = first_sub_path(), time.time()
             if st["path"]:
-                ua = "Mozilla/5.0 (iPhone) gard config-Guard" if i % 2 == 0 else "v2rayNG/1.9 gard config-Guard"
+                ua = "Mozilla/5.0 (iPhone) Gard-Guard" if i % 2 == 0 else "v2rayNG/1.9 Gard-Guard"
                 if probe_sub(st["path"], ua):
                     if st["bad"]: log("sub-guard: subscription links are fine again"); said.clear()
                     st["bad"] = 0
@@ -648,7 +648,7 @@ def watch(gids):
         i += 1
         time.sleep(15)
 
-# ---------------- owner key service (POST /gard-config/key, used by the "API Keys" page) ----------------
+# ---------------- owner key service (POST /jinx/key, used by the "API Keys" page) ----------------
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 _attempts = {}
 
@@ -662,15 +662,15 @@ class KeyHandler(BaseHTTPRequestHandler):
     def do_GET(self): self._send(405, {"detail": "use POST"})
     def do_POST(self):
         route = self.path.split("?")[0].rstrip("/")
-        if route not in ("/gard-config/key", "/gard-config/password", "/gard-config/reset"): return self._send(404, {"detail": "not found"})
+        if route not in ("/jinx/key", "/jinx/password", "/jinx/reset"): return self._send(404, {"detail": "not found"})
         try: body = json.loads(self.rfile.read(min(int(self.headers.get("Content-Length") or 0), 4096)) or b"{}") or {}
         except Exception: body = {}
         if not isinstance(body, dict): body = {}
-        if route == "/gard-config/reset":
+        if route == "/jinx/reset":
             try: return reset_with_key(self, body)
             except Exception as e:
                 log("owner reset error:", e); return self._send(500, {"detail": "خطای داخلی، دوباره امتحان کن"})
-        if route == "/gard-config/password":
+        if route == "/jinx/password":
             try: return change_password(self, body)
             except Exception as e:
                 log("password change error:", e); return self._send(500, {"detail": "خطای داخلی، دوباره امتحان کن"})
@@ -703,7 +703,7 @@ _pw_lock = threading.Lock()
 USERNAME_OK = lambda u: 3 <= len(u) <= 32 and all(ch.isalnum() or ch in "_.-" for ch in u) and u.isascii()
 
 def change_password(handler, body):
-    """Settings > Change password. POST /gard-config/password {username, current, new, new_username?}.
+    """Settings > Change password. POST /jinx/password {username, current, new, new_username?}.
     Checks the CURRENT username + password straight in the panel database (bcrypt), then saves the new
     password (any password you like) and, if given, the new username. Owner and resellers, own account."""
     ip = client_ip(handler)
@@ -742,7 +742,7 @@ def change_password(handler, body):
     handler._send(200, {"ok": True, "username": final})
 
 def reset_with_key(handler, body):
-    """Login page > Owner access. POST /gard-config/reset {key, username, password}: one-time owner key -> new owner login."""
+    """Login page > Owner access. POST /jinx/reset {key, username, password}: one-time owner key -> new owner login."""
     ip = client_ip(handler)
     if limited("key", ip): return handler._send(429, {"detail": "تلاش زیاد بود، ۱۰ دقیقه دیگه امتحان کن"})
     key = str(body.get("key", "")).strip()[:40]

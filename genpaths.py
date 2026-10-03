@@ -1,9 +1,9 @@
-"""Super gard config: per-install secret paths.
+"""Gard Config: per-install secret paths.
 Every fork / every deploy gets its own random config paths on first boot (saved on the volume),
 so no two panels share the same paths. Old installs keep their paths so existing configs never break."""
 import json, os, secrets, uuid
 
-DATA = os.getenv("GARD_CONFIG_DATA", "/var/lib/pasarguard")
+DATA = os.getenv("GARD CONFIG_DATA", "/var/lib/pasarguard")
 OUT_JSON = f"{DATA}/paths.json"
 OUT_INC = f"{DATA}/inbounds.inc"
 # tag -> (local port, path prefix)

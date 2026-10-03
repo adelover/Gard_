@@ -1,4 +1,4 @@
-/* Super JinX dashboard add-on
+/* Gard Config dashboard add-on
    1) Sidebar shows only: Dashboard, Users, API Keys, Templates, Bulk Actions, Settings, Support
       (+ Admins for the owner only, to create resellers).
    2) The "API Keys" page gets a small built-in section to get the 5-minute owner key
