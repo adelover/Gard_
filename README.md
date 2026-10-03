@@ -2,14 +2,14 @@
 
 <img src="banner.svg" width="100%" alt="Gard Config Panel">
 
-<a href="https://t.me/+WvKFv0lU_i5lNGE0"><img src="https://readme-typing-svg.demolab.com?font=Inter&weight=800&size=22&duration=2600&pause=700&color=6C7BFF&center=true&vCenter=true&width=620&lines=One-click+Reseller+Panel+on+Railway;PasarGuard+%2B+Xray+in+a+single+service;5+configs+%C2%B7+2+groups+%C2%B7+self-healing;Free+forever+%C2%B7+Gard+Config" alt="Gard Config"></a>
+<a href="https://t.me/gard_config"><img src="https://readme-typing-svg.demolab.com?font=Inter&weight=800&size=22&duration=2600&pause=700&color=6C7BFF&center=true&vCenter=true&width=620&lines=One-click+Reseller+Panel+on+Railway;PasarGuard+%2B+Xray+in+a+single+service;5+configs+%C2%B7+2+groups+%C2%B7+self-healing;Free+forever+%C2%B7+Gard+Config" alt="Gard Config"></a>
 
 <h1>Gard Config Panel</h1>
 
 <p><b>پنل نمایندگی حرفه‌ای، رایگان و متن‌باز بر پایه‌ی PasarGuard</b><br>
 یک Fork تا یک سرویس کامل: پنل، هسته‌ی Xray و 5 کانفیگ آماده، همه روی Railway</p>
 
-<a href="https://t.me/+WvKFv0lU_i5lNGE0"><img src="https://img.shields.io/badge/Telegram-Gard%20Config-26A5E4?style=for-the-badge&logo=telegram&logoColor=white" alt="Telegram"></a>
+<a href="https://t.me/gard_config"><img src="https://img.shields.io/badge/Telegram-Gard%20Config-26A5E4?style=for-the-badge&logo=telegram&logoColor=white" alt="Telegram"></a>
 <img src="https://img.shields.io/badge/Version-6.1.3-5b6cff?style=for-the-badge" alt="Version">
 <img src="https://img.shields.io/badge/Price-Free-16a34a?style=for-the-badge" alt="Free">
 <br>
@@ -31,7 +31,7 @@
 <a href="#configs"><b>کانفیگ‌ها</b></a> &nbsp;·&nbsp;
 <a href="#reseller"><b>نمایندگی</b></a> &nbsp;·&nbsp;
 <a href="#fix"><b>عیب‌یابی</b></a> &nbsp;·&nbsp;
-<a href="https://t.me/+WvKFv0lU_i5lNGE0"><b>کانال</b></a>
+<a href="https://t.me/gard_config"><b>کانال</b></a>
 
 </div>
 
@@ -333,7 +333,7 @@ flowchart LR
 
 1. برو **کاربران ← ساخت کاربر**.
 2. یک **نام کاربری** بنویس.
-3. از بخش قالب، یکی رو انتخاب کن. مثلاً `30GB - 30 روز` (گروه Gard Config، 4 کانفیگ) یا `Pro 30GB - 30 روز` (گروه گارد کانفیگ | Gard Configپرو، 1 کانفیگ).
+3. از بخش قالب، یکی رو انتخاب کن. مثلاً `30GB - 30 روز` (گروه Gard Config، 4 کانفیگ) یا `Pro 30GB - 30 روز` (گروه گارد کانفیگ پرو، 1 کانفیگ).
 4. ذخیره کن. حجم، تاریخ انقضا و کانفیگ‌ها خودکار تنظیم میشن.
 5. روی کاربر بزن و **لینک اشتراک** رو کپی کن و برای مشتری بفرست.
 
@@ -416,7 +416,7 @@ flowchart LR
 
 | گروه | کانفیگ | پروتکل | انتقال | اثرانگشت TLS | ویژگی |
 |---|---|---|---|---|---|
-| **گارد کانفیگ | Gard Configپرو** | 𝗣𝗿𝗼 | VLESS | WebSocket + Early Data | Chrome | تک‌کانفیگ با کمترین پینگ |
+| **گارد کانفیگ پرو** | 𝗣𝗿𝗼 | VLESS | WebSocket + Early Data | Chrome | تک‌کانفیگ با کمترین پینگ |
 | **Gard Config** | ⚡ 𝗙𝗹𝗮𝘀𝗵 | VLESS | WebSocket | Firefox | سریع و سبک |
 | | 🔥 𝗙𝗶𝗿𝗲 | Trojan | WebSocket | Safari | مناسب iOS |
 | | 💎 𝗗𝗶𝗮𝗺𝗼𝗻𝗱 | VMess | WebSocket | Edge | سازگاری با اپ‌های قدیمی |
@@ -425,11 +425,11 @@ flowchart LR
 اسم کانفیگ‌ها توی اپ کاربر با فونت مخصوص دیده میشه:
 
 ```text
-𝗣𝗿𝗼 | گارد کانفیگ | Gard Config| Gard Config
-⚡ 𝗙𝗹𝗮𝘀𝗵 | گارد کانفیگ | Gard Config| Gard Config
-🔥 𝗙𝗶𝗿𝗲 | گارد کانفیگ | Gard Config| Gard Config
-💎 𝗗𝗶𝗮𝗺𝗼𝗻𝗱 | گارد کانفیگ | Gard Config| Gard Config
-🌙 𝗡𝗶𝗴𝗵𝘁 | گارد کانفیگ | Gard Config| Gard Config
+𝗣𝗿𝗼 | گارد کانفیگ | Gard Config
+⚡ 𝗙𝗹𝗮𝘀𝗵 | گارد کانفیگ | Gard Config
+🔥 𝗙𝗶𝗿𝗲 | گارد کانفیگ | Gard Config
+💎 𝗗𝗶𝗮𝗺𝗼𝗻𝗱 | گارد کانفیگ | Gard Config
+🌙 𝗡𝗶𝗴𝗵𝘁 | گارد کانفیگ | Gard Config
 ```
 
 متن بعد از اسم رو با متغیر `CONFIG_TITLE` هر چی بخوای عوض کن.
@@ -464,7 +464,7 @@ https://YOUR-DOMAIN/sub/<token>
 | گروه | قالب‌های فروش آماده |
 |---|---|
 | **Gard Config** | 10، 30، 50 و 100 گیگ (30 روزه) · 200 گیگ (60 روزه) · نامحدود (30 روزه) |
-| **گارد کانفیگ | Gard Configپرو** | Pro 30، 50 و 100 گیگ · Pro نامحدود (همه 30 روزه) |
+| **گارد کانفیگ پرو** | Pro 30، 50 و 100 گیگ · Pro نامحدود (همه 30 روزه) |
 
 **منوی پنل**: داشبورد · کاربران · کلیدهای API · قالب‌ها · عملیات گروهی · تنظیمات · پشتیبانی
 
@@ -480,7 +480,7 @@ https://YOUR-DOMAIN/sub/<token>
 - تاریخ انقضا به **تقویم شمسی** و هشدار نزدیک شدن به پایان حجم یا زمان
 - حلقه‌ی مصرف با حجم مصرف‌شده، باقی‌مانده و کل حجم
 - **پینگ زنده‌ی سرور** از گوشی کاربر با برچسب کیفیت و آنتن
-- لینک اشتراک با **QR داخلی** (لوگوی گارد کانفیگ | Gard Configوسطش) و کپی همه‌ی کانفیگ‌ها
+- لینک اشتراک با **QR داخلی** (لوگوی گارد کانفیگ وسطش) و کپی همه‌ی کانفیگ‌ها
 - اتصال با یک لمس به V2Box، v2rayNG، Hiddify، Streisand، Happ و NekoBox، با دکمه‌ی شناور «اتصال سریع»
 - فهرست کانفیگ‌ها با آیکون اختصاصی، برچسب پروتکل، QR هر کانفیگ و کپی سریع
 - سبک و روان روی گوشی‌های ضعیف هم (60 فریم)، بدون هیچ سرویس بیرونی
@@ -553,7 +553,7 @@ flowchart LR
 
 | متغیر | پیش‌فرض | کاربرد |
 |---|---|---|
-| `CONFIG_TITLE` | `گارد کانفیگ | Gard Config\| Gard Config` | متنی که بعد از اسم هر کانفیگ دیده میشه |
+| `CONFIG_TITLE` | `گارد کانفیگ | Gard Config` | متنی که بعد از اسم هر کانفیگ دیده میشه |
 | `SUBSCRIPTION_PATH` | `sub` | مسیر لینک اشتراک |
 | `PUBLIC_DOMAIN` | دامنه‌ی Railway | فقط برای دامنه‌ی شخصی یا Cloudflare |
 | `DEMO_RESELLER` | `on` | با `off` نماینده‌ی نمونه ساخته نمیشه |
@@ -690,10 +690,10 @@ flowchart LR
 
 <div align="center">
 
-<a href="https://t.me/+WvKFv0lU_i5lNGE0"><img src="https://img.shields.io/badge/Join-%D8%AC%DB%8C%D9%86%DA%A9%D8%B3%20%7C%20Gard%20Config-26A5E4?style=for-the-badge&logo=telegram&logoColor=white" alt="Join Channel"></a>
+<a href="https://t.me/gard_config"><img src="https://img.shields.io/badge/Join-Gard%20Config-26A5E4?style=for-the-badge&logo=telegram&logoColor=white" alt="Join Channel"></a>
 
 آپدیت‌ها، آموزش‌ها و پشتیبانی فقط از طریق کانال رسمی<br>
-**[گارد کانفیگ | Gard Config| Gard Config](https://t.me/+WvKFv0lU_i5lNGE0)**
+**[گارد کانفیگ | Gard Config](https://t.me/gard_config)**
 
 اگه این پروژه به کارت اومد، با یک **Star** حمایتش کن.
 

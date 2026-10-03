@@ -11,4 +11,4 @@
 - The internal node API key and TLS certificate are generated on first boot and stored on the volume.
 - The subscription page file is checked every 3 seconds and restored from the original copy inside the image if it is missing or changed.
 
-Found a problem? Report it in the [Gard Config channel](https://t.me/+WvKFv0lU_i5lNGE0).
+Found a problem? Report it in the [Gard Config channel](https://t.me/gard_config).
